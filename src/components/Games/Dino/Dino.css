@@ -1,0 +1,133 @@
+.Dino_wrap {
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dino_container {
+    min-width: 300px;
+    max-width: 700px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: #fff;
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    border-radius: 5px;
+}
+
+.game_base {
+    min-width: 300px;
+    max-width: 700px;
+    height: 180px;
+    border-bottom: 3px solid black;
+}
+
+.dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(./image/dino4.svg);
+    background-size: 50px 50px;
+    position: relative;
+    top: 58px;
+}
+
+.spike {
+    width: 20px;
+    height: 40px;
+    background-image: url(./image/spikes2.svg);
+    background-size: 20px 40px;
+    position:relative;
+    top: 10px;
+    left: 90%;
+}
+
+.dinoJump {
+    animation: dinoJump 0.3s linear;
+}
+
+@keyframes dinoJump {
+    0% {
+        top: 58px;
+    }
+    30% {
+        top: 25px;
+    }
+    50% {
+        top: 5px;
+    }
+    80% {
+        top: 25px;
+    }
+    100% {
+        top: 58px;
+    }
+}
+
+.dino_btn_wrapper {
+    min-width: 300px;
+    max-width: 700px;
+    height: 86px;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+}
+
+.dino_btn {
+    font-size: 13px;
+    width: 130px;
+    text-align: center;
+	display: inline-block;
+    margin: 20px 0;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+}
+
+.dino_btn:active {
+    box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+.dino_btn_start_visible {
+    display: none;
+}
+
+.dino_timer {
+    padding: 15px 20px 10px 5px;
+    width: 130px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 18px 0;
+    background: #fff;
+    border-radius: 5px;   
+    margin-left: 10px;
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+}
+
+.dino_instruction {
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 80px;
+    margin: 20px auto;
+    padding-top: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+}
+
+.dino_instruction_list {
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.dino_instruction_list_item {
+    font-size: 15px;
+    font-weight: 500;
+}

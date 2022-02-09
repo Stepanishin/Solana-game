@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "Retro Gaming"; 
+    src: url("./fonts/Retro\ Gaming.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+/* body {
+    font-size: Min(20px, 3vw);
+} */
+
+.main_container {
+    min-height: 100vh;
+    background-image: url(./image/mainBackground2.jpg);
+    /* background-image: url(./image/mainBorder.jpg); */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main_border {
+    min-width: 320px;
+    max-width: 700px;
+    /* background-image: url(./image/mainBorder.jpg); */   
+    margin: 0 auto;
+}
+
+* {
+    font-family: "Retro Gaming", sans-serif;
+    color: #d1fb84;
+    text-shadow: 0 0 20px #d1fb84, 0 0 30px #d1fb84;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn {
+    /* font-size: 13px; */
+    font-size: Min(20px, 4vw);
+    text-align: center;
+	display: inline-block;
+    /* margin: 20px 0; */
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+}
+
+.btn:active {
+    box-shadow: none;
+	position: relative;
+	top: .2em;
 }
