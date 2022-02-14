@@ -42,7 +42,7 @@ const Catalog = () => {
                 games.map(game => {
                     return (
                         <div className='game_container'  key={game.id}>
-                            <Link  to={`/${game.title}`} >
+                            <Link  to={`/${game.url}`} >
                                 <div className='game_wrap_title'>
                                     <img className='game_avatar' src={game.avatar} alt={game.title} width="50" height="50" />
                                     <h2 className='game_title'>{game.title}</h2>

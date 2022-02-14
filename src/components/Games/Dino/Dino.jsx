@@ -68,7 +68,7 @@ const Dino = () => {
             let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"))
             let spikeLeft = parseInt(window.getComputedStyle(spike).getPropertyValue("left"))
 
-            if (spikeLeft < 37 && spikeLeft > 0 && dinoTop >= 58) {
+            if (spikeLeft < 37 && spikeLeft > 0 && dinoTop >= 45) {
                 spikeY = 90
                 spike.classList.remove('spikeMov')
                 btnStart.classList.remove('dino_btn_start_visible')

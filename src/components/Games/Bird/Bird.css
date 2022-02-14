@@ -1,86 +1,25 @@
-.Dino_wrap {
+.bird_container {
     padding-top: 100px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.dino_container {
+.bird_wrap {
     min-width: 300px;
     max-width: 700px;
-    height: 200px;
+    height: 288px;
+    display: block;
     margin: 0 auto;
     background-color: #fff;
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
     border-radius: 5px;
 }
 
-.game_base {
-    min-width: 300px;
-    max-width: 700px;
-    height: 180px;
-    border-bottom: 3px solid black;
-}
-
-.dino {
-    width: 50px;
-    height: 50px;
-    /* width: 30px;
-    height: 30px; */
-    /* background-image: url(./image/dino4.svg); */
-    /* background-image: url(./image/kangaroo.png); */
-    background-image: url(./image/charmander2.png);
-    transform: scale(-1, 1);
-    /* background-size: 50px 50px; */
-    background-size: cover;
+.bird_btn_wrapper {
+    top: -480px;
+    /* top: -400px; */
     position: relative;
-    top: 45px;
-    left: 5px;
-    /* top: 58px; */
-}
-
-.spike {
-    /* width: 20px; */
-    /* height: 40px; */
-    width: 40px;
-    height: 40px;
-    /* background-image: url(./image/spikes2.svg); */
-    background-image: url(./image/pokeball.png);
-    /* background-size: 20px 40px; */
-    background-size: 40px 40px;
-    position:relative;
-    /* top: 10px; */
-    top: 5px;
-    left: 90%;
-}
-
-.dinoJump {
-    animation: dinoJump 0.35s linear;
-}
-
-@keyframes dinoJump {
-    0% {
-        /* top: 58px; */
-        top: 45px;
-    }
-    30% {
-        /* top: 25px; */
-        top: 30px;
-    }
-    50% {
-        /* top: 5px; */
-        top: 5px;
-    }
-    80% {
-        /* top: 25px; */
-        top: 30px;
-    }
-    100% {
-        /* top: 58px; */
-        top: 45px;
-    }
-}
-
-.dino_btn_wrapper {
+    z-index: 100;
     min-width: 300px;
     max-width: 700px;
     height: 86px;
@@ -89,7 +28,7 @@
     text-align: center;
 }
 
-.dino_btn {
+.bird_btn {
     font-size: 13px;
     width: 130px;
     text-align: center;
@@ -107,7 +46,7 @@
     box-shadow: 0 .2em gray; 
 }
 
-.dino_btn:active {
+.bird_btn:active {
     box-shadow: none;
 	position: relative;
 	top: .2em;
@@ -117,19 +56,74 @@
     display: none;
 }
 
-.dino_timer {
+.bird_timer {
     padding: 15px 20px 10px 5px;
     width: 130px;
     font-size: 13px;
     font-weight: 600;
-    margin: 18px 0;
+    margin: 19px 0;
     background: #fff;
     border-radius: 5px;   
     margin-left: 10px;
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
 }
 
-.dino_instruction {
+.bird {
+    width: 30px;
+    height: 20px;
+    /* background-image: url(./image/bird.png); */
+    background-image: url(./image/charizard.png);
+    transform: scale(-1, 1);
+    background-size:cover;
+    position: relative;
+    top: 60px;
+    left: 80px;
+}
+
+.pipeUp {
+    background-image: url(./image/pipeUp.png);
+    width: 30px;
+    height: 140px;
+    background-size:cover;
+    position: relative;
+    left: 90%;
+    top: -79px;
+}
+
+.pipeBottom {
+    background-image: url(./image/pipeBottom.png);
+    width: 30px;
+    height: 100px;
+    background-size:cover;
+    position: relative;
+    left: 90%;
+    bottom: 30px;
+}
+
+.fg_top {
+    background-image: url(./image/fg.png);
+    background-size:cover;
+    position: relative;
+    z-index: 1;
+    min-width: 300px;
+    max-width: 700px;
+    height: 80px;
+    top: -320px;
+    transform: rotate(180deg);
+}
+
+.fg_bottom {
+    background-image: url(./image/fg.png);
+    background-size:cover;
+    position: relative;
+    z-index: 1;
+    min-width: 300px;
+    max-width: 700px;
+    height: 80px;
+    top: -115px;
+}
+
+.bird_instruction {
     min-width: 300px;
     max-width: 500px;
     min-height: 80px;
@@ -138,14 +132,15 @@
     background-color: #fff;
     border-radius: 5px;
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    z-index: 1000;
 }
 
-.dino_instruction_list {
+.bird_instruction_list {
     margin-left: 40px;
     margin-top: 5px;
 }
 
-.dino_instruction_list_item {
+.bird_instruction_list_item {
     font-size: 15px;
     font-weight: 500;
 }

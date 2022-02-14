@@ -34,11 +34,9 @@ a {
 }
 
 .btn {
-    /* font-size: 13px; */
     font-size: Min(20px, 4vw);
     text-align: center;
 	display: inline-block;
-    /* margin: 20px 0; */
     font-weight: 600;
     padding: 10px 20px;
     background-color: lightgray;
