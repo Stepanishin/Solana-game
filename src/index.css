@@ -5,20 +5,14 @@
     font-weight: normal; 
 } 
 
-/* body {
-    font-size: Min(20px, 3vw);
-} */
-
 .main_container {
     min-height: 100vh;
     background-image: url(./image/mainBackground2.jpg);
-    /* background-image: url(./image/mainBorder.jpg); */
 }
 
 .main_border {
     min-width: 320px;
-    max-width: 700px;
-    /* background-image: url(./image/mainBorder.jpg); */   
+    max-width: 700px;  
     margin: 0 auto;
 }
 
@@ -42,15 +36,14 @@ a {
     background-color: lightgray;
     text-shadow: -1px -1px black, 1px 1px white;
     color: gray;
-    -webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	-o-border-radius: 7px;
 	border-radius: 7px;
-    box-shadow: 0 .2em gray; 
+    -webkit-box-shadow: 0 .2em gray;
+            box-shadow: 0 .2em gray; 
 }
 
 .btn:active {
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 	position: relative;
 	top: .2em;
 }

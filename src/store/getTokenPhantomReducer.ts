@@ -1,19 +1,20 @@
-const defaultTitleState = {
-    // title: 'TokenPhantom',
+type DefaultTitleStateType = {
+    isToken: boolean
+}
+
+const defaultTitleState : DefaultTitleStateType = {
     isToken: false
 }
 
-export const getTokenPhantomReducer = (state  = defaultTitleState, action) => {
+export const getTokenPhantomReducer = (state  = defaultTitleState, action) : DefaultTitleStateType => {
     switch (action.type) {
         case "auth":
             return {...state, 
-                // title: JSON.parse(window.localStorage.getItem('user')).email,
                 isToken: true
                 }
         
         case "logOut":
             return {...state, 
-                // title: 'AUTHORIZATION',
                 isToken: false
                 }
         default:

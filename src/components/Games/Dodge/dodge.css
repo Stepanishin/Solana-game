@@ -1,10 +1,10 @@
-.Dino_wrap {
-    padding-top: 50px;
+.Dodge_wrap {
+    padding-top: 25px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.dino_container {
+.dodge_container {
     min-width: 300px;
     max-width: 700px;
     height: 200px;
@@ -13,94 +13,43 @@
     background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
     border-radius: 5px;
+    padding-top: 20px;
 }
 
-.game_base {
+.dodge_game_base {
     min-width: 300px;
     max-width: 700px;
-    height: 180px;
+    height: 160px;
     border-bottom: 3px solid black;
-}
-
-.dino {
-    width: 50px;
-    height: 50px;
-    background-image: url(./image/charmander2.png);
-    -webkit-transform: scale(-1, 1);
-        -ms-transform: scale(-1, 1);
-            transform: scale(-1, 1);
-    background-size: cover;
+    border-top: 3px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
-    top: 45px;
-    left: 5px;
 }
 
-.spike {
+.squirtle {
+    background-image: url(./image/squirtle.png);
     width: 30px;
     height: 30px;
-    background-image: url(./image/pokeball.png);
     background-size: 30px 30px;
-    position:relative;
-    top: 13px;
-    left: 90%;
+    position: absolute;
+    left: 30px;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
 }
 
-.spike1 {
+.pokeball {
     background-image: url(./image/pokeball.png);
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+    position: absolute;
+    left: 93%;
 }
 
-.spike2 {
-    background-image: url(./image/pokemon2.png);
-}
-
-.spike3 {
-    background-image: url(./image/pokemon1.png);
-}
-
-.dinoJump {
-    -webkit-animation: dinoJump 0.35s linear;
-            animation: dinoJump 0.35s linear;
-}
-
-
-@-webkit-keyframes dinoJump {
-    0% {
-        top: 45px;
-    }
-    30% {
-        top: 18px;
-    }
-    50% {
-        top: 0px;
-    }
-    80% {
-        top: 28px;
-    }
-    100% {
-        top: 45px;
-    }
-}
-
-
-@keyframes dinoJump {
-    0% {
-        top: 45px;
-    }
-    30% {
-        top: 18px;
-    }
-    50% {
-        top: 0px;
-    }
-    80% {
-        top: 28px;
-    }
-    100% {
-        top: 45px;
-    }
-}
-
-.dino_btn_wrapper {
+.dodge_btn_wrapper {
     min-width: 300px;
     max-width: 700px;
     height: 86px;
@@ -111,9 +60,11 @@
         -ms-flex-pack: start;
             justify-content: start;
     text-align: center;
+    margin-bottom: -24px;
+    margin-left: -10px;
 }
 
-.dino_btn {
+.dodge_btn {
     font-size: 13px;
     width: 130px;
     text-align: center;
@@ -129,18 +80,18 @@
             box-shadow: 0 .2em gray; 
 }
 
-.dino_btn:active {
+.dodge_btn:active {
     -webkit-box-shadow: none;
             box-shadow: none;
 	position: relative;
 	top: .2em;
 }
 
-.dino_btn_start_visible {
+.dodge_btn_start_visible {
     display: none;
 }
 
-.dino_timer {
+.dodge_timer {
     padding: 15px 20px 10px 5px;
     width: 130px;
     font-size: 13px;
@@ -153,7 +104,7 @@
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
 }
 
-.dino_instruction {
+.dodge_instruction {
     min-width: 300px;
     max-width: 500px;
     min-height: 80px;
@@ -163,19 +114,21 @@
     border-radius: 5px;
     background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    z-index: 1000;
+    padding-right: 5px;
 }
 
-.dino_instruction_list {
+.dodge_instruction_list {
     margin-left: 40px;
     margin-top: 5px;
 }
 
-.dino_instruction_list_item {
+.dodge_instruction_list_item {
     font-size: 15px;
     font-weight: 500;
 }
 
-.DinoRecords_container {
+.DodgeRecords_container {
     min-width: 300px;
     max-width: 500px;
     min-height: 80px;
@@ -187,14 +140,44 @@
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
 }
 
-.DinoRecords_list {
+.DodgeRecords_list {
     margin-left: 10px;
     margin-top: 5px;
     margin-right: 10px;
     padding-bottom: 5px;
 }
 
-.DinoRecords_item {
+.DodgeRecords_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.DodgeRecords_container {
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 80px;
+    margin: 20px auto;
+    padding-top: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+}
+
+.DodgeRecords_list {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+.DodgeRecords_item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

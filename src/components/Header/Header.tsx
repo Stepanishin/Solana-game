@@ -1,10 +1,10 @@
 import React from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom'
-// import Dropdown from 'react-dropdown';
-// import 'react-dropdown/style.css';
+import { FC } from 'react'
 
-const Header = () => {
+
+const Header: FC = () => {
 
     return (
         <nav className='header_nav'>

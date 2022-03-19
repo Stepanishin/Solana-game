@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Bird.css"
+import BirdRecords from './BirdRecords';
+import { getDatabase, ref, get, child, push, update } from "firebase/database";
 
 const Bird = () => {
     
     let score = 0;
+    let isGame = false
+    const [change, setChange] = useState([])
 
     const startGame = (e) => {
+        const db = getDatabase();
         const bird = document.querySelector(".bird")
         const pipeUp = document.querySelector(".pipeUp")
         const pipeBottom = document.querySelector(".pipeBottom")
@@ -19,6 +24,7 @@ const Bird = () => {
         let birdSpeed = 24
         let gap = 50;
         let score = 0;
+        isGame = true;
 
         bird.style.top = birdTop + "px"
         pipeUp.style.left = pipeX + "%"
@@ -32,7 +38,8 @@ const Bird = () => {
             return Math.random() * (max - min) + min;
         }
 
-        function move() {            
+        function move() {    
+            const records = score * 10        
             if (birdTop > 205 || birdTop < 15) {
                 birdTop = 60
                 pipeX = 90
@@ -43,7 +50,33 @@ const Bird = () => {
                 clearInterval(startCounting);
                 clearInterval(acceleration)
                 btnStart.classList.remove('dino_btn_start_visible')
-            } else if (pipeX === -3) {
+                isGame = false
+
+                const getRecords = ( ) => {
+                    const dbRef = ref(getDatabase());
+                    get(child(dbRef, '/')).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        let arr = Object.entries(snapshot.val())
+                        for (let i = 0; i < arr.length; i++) {
+                            if (arr[i][0] === localStorage.getItem('WalletKey')) {
+                                if (arr[i][1].BirdRecords === undefined || arr[i][1].BirdRecords < records) {
+                                    const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
+                                    const updates = {};
+                                    updates[`${localStorage.getItem('WalletKey')}/` + '/BirdRecords/'] = records;
+                                    setChange(records)
+                                    return update(ref(db), updates);
+                                }
+                            }
+                        }
+                    } else {
+                        console.log("No data available");
+                    }
+                    }).catch((error) => {
+                    console.error(error);
+                    });
+                }
+                getRecords()
+            } else if (pipeX === 0) {
                 pipeX = 90
                 pipeY = getRandomArbitrary(-81, -5)
                 pipeUp.style.left = pipeX + "%"
@@ -51,7 +84,7 @@ const Bird = () => {
                 pipeBottom.style.left = pipeX + "%"
                 pipeBottom.style.top = pipeY + gap + "px"
             }
-            else if ((birdTop < pipeY+145 || birdTop > pipeY+190) && pipeX === 15) {
+            else if ((birdTop < pipeY+155 || birdTop > pipeY+185) && pipeX === 15) {
                 birdTop = 60
                 pipeX = 90
                 bird.style.top = birdTop + "px"
@@ -61,6 +94,32 @@ const Bird = () => {
                 clearInterval(startCounting);
                 clearInterval(acceleration)
                 btnStart.classList.remove('dino_btn_start_visible')
+                isGame = false
+
+                const getRecords = ( ) => {
+                    const dbRef = ref(getDatabase());
+                    get(child(dbRef, '/')).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        let arr = Object.entries(snapshot.val())
+                        for (let i = 0; i < arr.length; i++) {
+                            if (arr[i][0] === localStorage.getItem('WalletKey')) {
+                                if (arr[i][1].BirdRecords === undefined || arr[i][1].BirdRecords < records) {
+                                    const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
+                                    const updates = {};
+                                    updates[`${localStorage.getItem('WalletKey')}/` + '/BirdRecords/'] = records;
+                                    setChange(records)
+                                    return update(ref(db), updates);
+                                }
+                            }
+                        }
+                    } else {
+                        console.log("No data available");
+                    }
+                    }).catch((error) => {
+                    console.error(error);
+                    });
+                }
+                getRecords()
             }
             else {
                 birdTop +=1.5
@@ -82,8 +141,10 @@ const Bird = () => {
         })
 
         const fly = () => {
-            birdTop -=20
-            bird.style.top = birdTop + "px"
+            if (isGame) {
+                birdTop -=20
+                bird.style.top = birdTop + "px"
+            }
         }
 
         const startCounting = setInterval(tick, 100);
@@ -124,6 +185,7 @@ const Bird = () => {
                     <li className='bird_instruction_list_item'>ENJOY!</li>
                 </ol>
             </div>
+            <BirdRecords change={change} />
         </div>
     );
 };

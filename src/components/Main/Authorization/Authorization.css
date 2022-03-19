@@ -8,19 +8,33 @@
     height: 200px;
     margin: 0 auto;
     background-color: #fff;
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
     border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 0 50px;
 }
 
 .btn_phantom {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-shadow: -1px -1px black, 1px 1px white;
     color: gray;
 }
@@ -37,4 +51,53 @@
     right: -10px;
     bottom: 0;
     background-color: gainsboro ;
+}
+
+.nickname_wrap {
+    background-color: #fff;
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    position: relative;
+    top: -65px;
+    padding: 5px 5px;
+    
+}
+
+.nickname_form {
+    min-width: 280px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.nickname_label {
+    padding-right: 5px;
+}
+
+.nickname_text {
+    color: #d1fb84;
+    text-shadow: 0 0 20px #d1fb84, 0 0 30px #d1fb84;
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    margin-top: 5px;
+}
+
+.nickname_buttins_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.UserData__container {
+    min-width: 280px;
+    max-width: 700px;
+    min-height: 50px;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    line-height: 120%;
 }
