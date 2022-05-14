@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header/Header.tsx';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Catalog from './components/Main/Catalog/Catalog.tsx';
 import About from './components/Main/About/About.tsx';
 import Authorization from './components/Main/Authorization/Authorization.tsx';
@@ -23,7 +23,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
   return (
-    <BrowserRouter>
     <div className="App">
       <Header />
       <main className='main_container'>
@@ -35,11 +34,14 @@ const app = initializeApp(firebaseConfig);
             <Route path='/Charmander' element={<Dino />} />
             <Route path='/Charizard' element={<Bird />} />
             <Route path='/Dodge' element={<Dodge />} />
+            <Route
+              path="*"
+              element={<Navigate to="/" replace />}
+            />
           </Routes>
         </div>
       </main>
-    </div>
-  </BrowserRouter>
+    </div>  
   );
 }
 

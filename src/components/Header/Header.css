@@ -1,6 +1,7 @@
 .header_nav {
-    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
-    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
+    /* background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%); */
+    background-color:rgba(0, 0, 0, 0.7);    
     padding: 20px 0;
 }
 
@@ -18,12 +19,31 @@
     padding: 0 10px;
 }
 
-@media screen and (max-width: 500px) {
-    .header_nav_list {
-        -ms-flex-pack: distribute;
-            justify-content: space-around;
-        gap: 10px;
-    }
+.header_nav_link {
+    font-size: Min(20px, 4vw);
+    text-align: center;
+	display: inline-block;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+	border-radius: 7px;
+    -webkit-box-shadow: 0 .2em gray;
+            box-shadow: 0 .2em gray; 
+}
+
+.header_nav_link:active {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+	position: relative;
+	top: .2em;
+}
+
+.header_nav_item {
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
 }
 
 .btn_connect_wallet {
@@ -45,4 +65,129 @@
             box-shadow: none;
 	position: relative;
 	top: .2em;
+}
+
+.header_nav_list_gamburger {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+.nav {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .header_nav {
+        display: flex;
+        justify-content: end;
+    }
+
+    .header_nav_list {
+        /* -ms-flex-pack: distribute; */
+            /* justify-content: space-around; */
+        /* gap: 10px; */
+        /* justify-content: center; */
+    }
+    .header_nav_link {
+        display: none;
+    }
+    #toggle {
+        display: none;
+      }
+      
+      /**
+        Hamburger
+      **/
+      .hamburger {
+        display: block;
+        /* position: absolute; */
+        /* top: 5em;
+        right: 5%;
+        margin-left: -2em;
+        margin-top: -45px; */
+        width: 2em;
+        height: 45px;
+        z-index: 5;
+        margin-left: 45px;
+      }
+      
+      .hamburger div {
+        display: block;
+        /* position: relative; */
+        width: 3em;
+        height: 7px;
+        border-radius: 3px;
+        background-color: #f8982b;
+        margin-top: 8px;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      /**
+      Nav Styles
+      **/
+      .nav {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #090E6B;
+        top: -100%; left: 0; right: 0; bottom: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        transform: scale(0);
+      }
+      .nav-wrapper {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        overflow-y: auto;
+        height: 100%;
+      }
+      .header_nav_mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+      .header_nav_mobile a {
+        position: relative;
+        text-decoration: none;
+        color: #6ecddd;
+        font-size: 2em;
+        display: inline-block;
+        margin-top: 1.25em;
+        transition: color 0.2s ease-in-out;
+        letter-spacing: 1px;
+      }
+      
+      /**
+      Animations
+      **/
+      #toggle:checked + .hamburger .top-bun {
+        transform: rotate(-45deg);
+        margin-top: 25px;
+      }
+      #toggle:checked + .hamburger .bottom-bun {
+        opacity: 0;
+        transform: rotate(45deg);
+      }
+      #toggle:checked + .hamburger .meat {
+        transform: rotate(45deg);
+        margin-top: -7px;
+      }
+      
+      #toggle:checked + .hamburger + .nav {
+        top: 0;
+        transform: scale(1);
+      }
+}
+
+.dn {
+    display: none;
 }

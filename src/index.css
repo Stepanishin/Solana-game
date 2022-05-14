@@ -5,9 +5,13 @@
     font-weight: normal; 
 } 
 
-.main_container {
-    min-height: 100vh;
+body {
     background-image: url(./image/mainBackground2.jpg);
+    /* background-image: url(./image/3.jpg); */
+}
+
+.main_container {
+    min-height: 100vh - 80px;
 }
 
 .main_border {

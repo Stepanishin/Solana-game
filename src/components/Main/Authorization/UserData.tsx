@@ -8,11 +8,6 @@ const UserData: FC = (props) => {
     let [userData, setUserData] = useState<any | []>([]);
     const { isLogin } = props
 
-    // useEffect(() => {
-    //     if (isLogin) {
-    //         getUser()
-    //     }
-    // },[isLogin])
     useEffect(() => {
         if (isLogin) {
             getUser()
@@ -24,10 +19,7 @@ const UserData: FC = (props) => {
         let table = []
         await get(child(dbRef, `/${isLogin}`)).then((snapshot) => {
             if (snapshot.exists()) {
-                // let arr = Object.entries(snapshot.val())
                 let arr = Object.values(Object.entries(snapshot.val()))
-                // let arr = snapshot.val()
-                console.log(arr)
                 setUserData.apply(null,[...userData, arr])
             } else {
                 console.log("No data available");

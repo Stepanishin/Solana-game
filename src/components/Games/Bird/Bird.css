@@ -110,7 +110,9 @@
 }
 
 .fg_top {
-    background-image: url(./image/fg.png);
+    /* background-image: url(./image/fg.png); */
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
     background-size:cover;
     position: relative;
     z-index: 1;
@@ -121,10 +123,14 @@
     -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
+    border-top: 7px solid black;
+    border-radius: 5px;
 }
 
 .fg_bottom {
-    background-image: url(./image/fg.png);
+    /* background-image: url(./image/fg.png); */
+    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
+    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
     background-size:cover;
     position: relative;
     z-index: 1;
@@ -132,6 +138,8 @@
     max-width: 700px;
     height: 80px;
     top: -115px;
+    border-top: 7px solid black;
+    border-radius: 5px;
 }
 
 .bird_instruction {
@@ -160,7 +168,7 @@
 .BirdRecords_container {
     min-width: 300px;
     max-width: 500px;
-    min-height: 80px;
+    min-height: 70px;
     margin: 20px auto;
     padding-top: 5px;
     background-color: #fff;

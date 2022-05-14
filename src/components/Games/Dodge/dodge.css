@@ -131,37 +131,7 @@
 .DodgeRecords_container {
     min-width: 300px;
     max-width: 500px;
-    min-height: 80px;
-    margin: 20px auto;
-    padding-top: 5px;
-    background-color: #fff;
-    border-radius: 5px;
-    background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
-    background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
-}
-
-.DodgeRecords_list {
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-right: 10px;
-    padding-bottom: 5px;
-}
-
-.DodgeRecords_item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.DodgeRecords_container {
-    min-width: 300px;
-    max-width: 500px;
-    min-height: 80px;
+    min-height: 70px;
     margin: 20px auto;
     padding-top: 5px;
     background-color: #fff;
