@@ -30,6 +30,7 @@ const Header: FC = () => {
                 <Link className='header_nav_link' to={'/about'}><li className='header_nav_item'>About</li></Link>
                 <Link className='header_nav_link' to={'/Authorization'}><li className='header_nav_item'>Authorization</li></Link>
 
+                <Link className='header_logo' to={'/'}>TryHarders</Link>
                 <input id="toggle" type="checkbox"></input>
                 <label htmlFor="toggle" className="hamburger">
                     <div className="top-bun"></div>
