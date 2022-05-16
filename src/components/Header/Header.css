@@ -93,13 +93,6 @@
         /* justify-content: end; */
     }
 
-    .header_nav_list {
-        /* -ms-flex-pack: distribute; */
-            /* justify-content: space-around; */
-        /* gap: 10px; */
-        /* justify-content: space-between; */
-    }
-
     .header_logo {
       background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
       background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
