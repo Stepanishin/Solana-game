@@ -114,7 +114,6 @@
     border-radius: 5px;
     background: -o-radial-gradient(50% 50%,50% 50%,#374529 0,#0f140a 100%);
     background: radial-gradient(50% 50% at 50% 50%,#374529 0,#0f140a 100%);
-    z-index: 1000;
     padding-right: 5px;
 }
 
