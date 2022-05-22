@@ -52,11 +52,3 @@ a {
 	top: .2em;
 }
 
-@media screen and (min-width: 1441px) {
-    body {
-        /* transform: scale(1.1); */
-    }
-    .header_nav {
-        transform: scale(1.2);
-    }
-}

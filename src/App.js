@@ -8,6 +8,7 @@ import Dino from './components/Games/Dino/Dino';
 import Bird from './components/Games/Bird/Bird';
 import { initializeApp } from 'firebase/app';
 import Dodge from './components/Games/Dodge/Dodge';
+import Footer from './components/Footer/Footer.tsx';
 
 function App() {
 
@@ -41,6 +42,7 @@ const app = initializeApp(firebaseConfig);
           </Routes>
         </div>
       </main>
+      <Footer />
     </div>  
   );
 }
