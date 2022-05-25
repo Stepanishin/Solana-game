@@ -94,6 +94,8 @@
     .header_nav {
         display: flex;
         /* justify-content: end; */
+        /* padding-bottom: 2.5px;
+        padding-top: 2.5px; */
     }
 
     .header_logo {
