@@ -11,12 +11,12 @@ body {
 }
 
 .main_container {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 140px);
 }
 
 @media screen and (max-width: 500px) {
     .main_container {
-        min-height: calc(100vh - 135px);
+        min-height: calc(100vh - 145px);
     }
 }
 
