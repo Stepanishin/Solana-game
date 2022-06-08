@@ -1,6 +1,9 @@
 import React, { FC, useState } from 'react';
 import { getDatabase, ref, get, child } from "firebase/database";
 import { useEffect } from 'react';
+import { Connection } from "@metaplex/js";
+import { Metadata } from "@metaplex-foundation/mpl-token-metadata";
+import { PublicKey } from "@solana/web3.js";
 
 
 const UserData: FC = (props) => {
@@ -11,6 +14,7 @@ const UserData: FC = (props) => {
     useEffect(() => {
         if (isLogin) {
             getUser()
+            getNFTs()
         }
     },[isLogin])
 
@@ -29,9 +33,17 @@ const UserData: FC = (props) => {
             });
     }    
 
-    const alal = () => {
-        console.log(userData)
+    
+
+    async function getNFTs() {
+        const connection = new Connection("mainnet-beta");
+        const ownerPublickey = "3vh4bKCTuUnb5hjBmf2xxUL8aGUTcLgQkRzji36i9tha";
+        const nftsmetadata: any = await Metadata.findDataByOwner(connection, ownerPublickey)
+      
+        console.log(nftsmetadata);
     }
+
+
 
     return (
         <div className='UserData__container'>
@@ -58,6 +70,7 @@ const UserData: FC = (props) => {
                         </li>
                     </ul>
                 }
+
         </div>
     );
 };
