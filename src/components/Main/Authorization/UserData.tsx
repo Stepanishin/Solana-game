@@ -14,7 +14,7 @@ const UserData: FC = (props) => {
     useEffect(() => {
         if (isLogin) {
             getUser()
-            getNFTs()
+            // getNFTs()
         }
     },[isLogin])
 
@@ -35,13 +35,13 @@ const UserData: FC = (props) => {
 
     
 
-    async function getNFTs() {
-        const connection = new Connection("mainnet-beta");
-        const ownerPublickey = "3vh4bKCTuUnb5hjBmf2xxUL8aGUTcLgQkRzji36i9tha";
-        const nftsmetadata: any = await Metadata.findDataByOwner(connection, ownerPublickey)
+    // async function getNFTs() {
+    //     const connection = new Connection("mainnet-beta");
+    //     const ownerPublickey = "3vh4bKCTuUnb5hjBmf2xxUL8aGUTcLgQkRzji36i9tha";
+    //     const nftsmetadata: any = await Metadata.findDataByOwner(connection, ownerPublickey)
       
-        console.log(nftsmetadata);
-    }
+    //     console.log(nftsmetadata);
+    // }
 
 
 
