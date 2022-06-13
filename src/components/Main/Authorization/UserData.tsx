@@ -14,24 +14,24 @@ const UserData: FC = (props) => {
     useEffect(() => {
         if (isLogin) {
             getUser()
-            // getNFTs()
+            getNFTs()
         }
     },[isLogin])
 
-    async function getUser() {
-        const dbRef = ref(getDatabase());
-        let table = []
-        await get(child(dbRef, `/${isLogin}`)).then((snapshot) => {
-            if (snapshot.exists()) {
-                let arr = Object.values(Object.entries(snapshot.val()))
-                setUserData.apply(null,[...userData, arr])
-            } else {
-                console.log("No data available");
-            }
-            }).catch((error) => {
-            console.error(error);
-            });
-    }    
+    // async function getUser() {
+    //     const dbRef = ref(getDatabase());
+    //     let table = []
+    //     await get(child(dbRef, `/${isLogin}`)).then((snapshot) => {
+    //         if (snapshot.exists()) {
+    //             let arr = Object.values(Object.entries(snapshot.val()))
+    //             setUserData.apply(null,[...userData, arr])
+    //         } else {
+    //             console.log("No data available");
+    //         }
+    //         }).catch((error) => {
+    //         console.error(error);
+    //         });
+    // }    
 
     
 
